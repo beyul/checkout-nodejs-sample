@@ -1,0 +1,14 @@
+{
+  "name": "bhutan-payments0-checkout-api",
+  "version": "1.0.0",
+  "description": "Code sample for bhutan payments checkout apu",
+  "main": "enc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bhuwan Singh Gurung",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
