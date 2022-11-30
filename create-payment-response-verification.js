@@ -2,7 +2,7 @@ const { decrypt } = require("./lib");
 
 const secretKey = process.env.SECRET_KEY;
 var encryptionMethod = process.env.ECNRYPTION_METHOD;
-var iv = secretKey.substr(0, 16);
+var iv = secretKey.substring(0, 16);
 var decryptedMessage = decrypt(
   "c9OrnfeZ8T7e0KzWwxUQKPJK+no+/6ASHI3R/IiavOYujxT8wacssOu+Kjjory74TyBqCSQODq6GCshhQwH1Mbbtj+l/UpIxiFwVe0OwtVw=",
   encryptionMethod,
