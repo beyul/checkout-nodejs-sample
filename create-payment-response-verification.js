@@ -4,14 +4,14 @@ const secretKey = process.env.SECRET_KEY;
 var encryptionMethod = process.env.ECNRYPTION_METHOD;
 var iv = secretKey.substr(0, 16);
 var decryptedMessage = decrypt(
-  "J/UW/CTXpf9Gm2vDTKyt9Kv62MsC0XOFf7qCxxlRyoWsbVqEZiJzSWtmuNeBkpTFpTtTaZWov99/2/ULF21uFDhkU46v6jlcjQqNJyLdrms=",
+  "c9OrnfeZ8T7e0KzWwxUQKPJK+no+/6ASHI3R/IiavOYujxT8wacssOu+Kjjory74TyBqCSQODq6GCshhQwH1Mbbtj+l/UpIxiFwVe0OwtVw=",
   encryptionMethod,
   secretKey,
   iv
 );
 //create Payment response check
 const responseParameters =
-  "000|success|http://localhost:3000/checkout/27a235e1-580b-11ed-b974-eb3238db30fe";
+  "000|success|http://localhost:3000/checkout/00a9a8f0-708a-11ed-82bb-515f3419a744";
 //console.log(encryptedMessage);
 if (responseParameters === decryptedMessage) {
   console.log("💰 Data is valid");
