@@ -4,7 +4,7 @@ const secretKey = process.env.SECRET_KEY;
 const orderId = "DOI" + new Date().toISOString().substr(0, 19);
 
 const text =
-  "100.00" +
+  "150.25" +
   "|" +
   "USD" +
   "|" +
