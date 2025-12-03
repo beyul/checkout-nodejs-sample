@@ -2,7 +2,7 @@ const { decrypt } = require("./lib");
 const url = require("url");
 // Replace the URL parameter with resposne url
 const current_url = new URL(
-  "http://localhost:4200/?status=000&amount=100&code=CK-88D09A&accessKey=00a9a8f0-708a-11ed-82bb-515f3419a744&transactionId=pi_3M9lllKHzhDqOyh90qWCceNa&orderId=DOI2022-11-30T08%3A35%3A09&encrypted-data=JhVXnyHRQjzd5zmiOK0IMX9fbiYudYcRU4xi2N9DZTOGzadvLruPfjFtKw1cI1WcqSJ8W8g2JjZfswm7eXvI9%2FMbClpC6hbuA6Mkb9pWm%2FGfHNhFX4jo%2FtdSX86md6CDCVbgfe6R9NaOMOCayV34vg%3D%3D&metadata=%7B%7D"
+  "http://localhost:4200/?status=000&amount=100&code=CK-274232&accessKey=a2f41ac1-7137-11ed-81da-33e2a4158e8d&transactionId=pi_3MA5AaKHzhDqOyh90c1ESZlK&orderId=DOI2022-12-01T05%3A15%3A40&encrypted-data=%2Fb8Bcu8t%2B8hzCyUEIgoT%2BfP4tZxsRWJQjfK5cJboyFOBVIPnGiavvlUOTh0x8SKP6CIs7aS7ZP2nGghF5be2laxCtkleNu6hhxsxJXxORwCkv%2BVkNU7dDBWUjgVNOZ0%2BjQVrFkrhQRTsMxILonJ9JA%3D%3D&metadata=%7B%7D"
 );
 const params = current_url.searchParams;
 

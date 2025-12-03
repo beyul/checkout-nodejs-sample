@@ -1,6 +1,7 @@
 var crypto = require("crypto");
 require("dotenv").config();
-
+const algorithm = "aes-256-ctr";
+const secretKey = process.env.DECIPHER_KEY;
 var encrypt = function (plain_text, encryptionMethod, secret, iv) {
   var encryptor = crypto.createCipheriv(encryptionMethod, secret, iv);
   return (
@@ -16,7 +17,24 @@ var decrypt = function (encryptedMessage, encryptionMethod, secret, iv) {
   );
 };
 
+const decryptSecretKey = (hash) => {
+  console.log(secretKey);
+  const decipher = crypto.createDecipheriv(
+    algorithm,
+    secretKey,
+    Buffer.from(hash.iv, "hex")
+  );
+
+  const decrpyted = Buffer.concat([
+    decipher.update(Buffer.from(hash.content, "hex")),
+    decipher.final(),
+  ]);
+
+  return decrpyted.toString();
+};
+
 module.exports = {
   encrypt,
   decrypt,
+  decryptSecretKey,
 };
