@@ -7,7 +7,7 @@ const IV = SECRET_KEY.substring(0, 16); // First 16 characters as IV
 
 // Sample recurring payment data
 const recurringPaymentData = {
-  amount: 2999, // Amount in cents (e.g., 29.99 USD)
+  amount: 40000, // Amount in cents (e.g., 29.99 USD)
   currency: "USD",
   interval: "MONTHLY", // DAILY, WEEKLY, MONTHLY, or YEARLY
   intervalCount: 1,
@@ -16,6 +16,8 @@ const recurringPaymentData = {
   customerEmail: "customer@example.com",
   customerName: "John Doe", // Optional
   externalId: "sub_123", // Optional - your subscription ID
+  chargeImmidiately: true,
+  description: "test charge",
   metadata: {
     // Optional
     plan: "premium",
@@ -39,6 +41,8 @@ function encryptRecurringPayment(data) {
     data.customerEmail,
     data.customerName || "", // Optional field
     data.externalId || "", // Optional field
+    data.chargeImmidiately,
+    data.description,
     data.metadata ? JSON.stringify(data.metadata) : "", // Optional field
   ];
 
@@ -88,8 +92,8 @@ console.log("");
 
 // Example cURL command
 console.log("=== Example cURL Command ===");
-console.log(`curl -X POST https://api.bhutanpayments.com/api/v1/recurring-payments \\
-  -H "Authorization: Bearer ${API_KEY}" \\
+console.log(`curl -X POST http://localhost:8080/recurring-payments \\
+  -H ": Bearer ${API_KEY}" \\
   -H "Content-Type: application/json" \\
   -d '${JSON.stringify(apiRequest)}'`);
 console.log("");

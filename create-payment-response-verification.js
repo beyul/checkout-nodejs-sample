@@ -4,11 +4,14 @@ const secretKey = process.env.SECRET_KEY;
 var encryptionMethod = process.env.ECNRYPTION_METHOD;
 var iv = secretKey.substring(0, 16);
 var decryptedMessage = decrypt(
-  "qy60Ik0aItdB1t/i4bY3wE2+65uUeeQcOe5vH6kviUiWrNEEAMOJW8vy4trYyyriuFjtzWSBenlhf9rgnh9sstTVv6bGBD0U2G+OIpFVBSY=",
+  "6pm0MM3CCFn3OzxO3kOs7ZGiKi6aKIxYFoXt/Y2uZN8plJvrVxMk/ttJykQpWY9TwOAx8kAohNubJ8IBmiWxwLkO+1Fig6khYEsYxrDPfvg=",
   encryptionMethod,
   secretKey,
-  iv
+  iv,
 );
+
+
+console.log(decryptedMessage)
 //create Payment response check
 const responseParameters =
   "000|success|http://localhost:3000/checkout/e272f0c1-a559-11ee-9bb8-4754aca5a9f9";
