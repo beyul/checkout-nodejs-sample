@@ -18,6 +18,7 @@ const recurringPaymentData = {
   externalId: "sub_123", // Optional - your subscription ID
   chargeImmidiately: true,
   description: "test charge",
+  refundPolicyTerms: "FULL_REFUND",
   metadata: {
     // Optional
     plan: "premium",
@@ -43,6 +44,7 @@ function encryptRecurringPayment(data) {
     data.externalId || "", // Optional field
     data.chargeImmidiately,
     data.description,
+    data.refundPolicyTerms,
     data.metadata ? JSON.stringify(data.metadata) : "", // Optional field
   ];
 
